@@ -69,10 +69,12 @@ export const TodoWrapper = () => {
 
 
   useEffect(() => {
-    if (isInitializing) {
-      getItemHandler();
-      setIsInitializing(false);
-    } else {
+    if (todos) {
+      if (isInitializing) {
+        getItemHandler();
+        setIsInitializing(false);
+      } else {
+      }
       addToLocalStorage(todos);
     }
   }, [todos]);
